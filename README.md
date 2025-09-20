@@ -126,5 +126,3 @@ chmod 755 models
 - **Port conflicts**: If ports `5432` or `8000` are in use, stop conflicting services or modify the ports in the relevant `docker-compose` files.
 - **Database connection issues**: Verify the `DATABASE_URL` and ensure the database is healthy (use `pg_isready` healthcheck).
 - **Dependency issues**: If `pip install` fails, ensure `pyproject.toml` is correctly formatted and dependencies are compatible.
-
-For further assistance, refer to the [FastAPI documentation](https://fastapi.tiangolo.com/) or [PostgreSQL documentation](https://www.postgresql.org/docs/).
