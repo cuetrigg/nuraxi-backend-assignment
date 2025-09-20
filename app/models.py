@@ -24,7 +24,6 @@ class Event(Base):
         Index('ix_events_timestamp', 'timestamp'),
     )
 
-
 class DailyAggregate(Base):
     __tablename__ = "daily_aggregates"
     

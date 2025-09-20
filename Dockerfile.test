@@ -1,0 +1,19 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy pyproject.toml and install dependencies
+COPY pyproject.toml .
+RUN pip install --no-cache-dir uv && uv pip install --system .
+
+# Copy the application and test files
+COPY . .
+
+# Create a writable MODELS_DIR
+RUN mkdir -p /tmp/models && chmod -R 777 /tmp/models
