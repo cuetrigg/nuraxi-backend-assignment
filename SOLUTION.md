@@ -23,3 +23,6 @@ Tests run in a separate Docker container for model-specific endpoints needing fi
 
 ### 6. Streaming Endpoint
 I used Server-Sent Events (SSE) with an in-memory event bus, suitable for small-scale apps but limited by memory and CPU in production. I would switch to WebSockets and Redis for better concurrency and scalability.
+
+### 7. Enviroment Vars
+Normally i would not include the env file as part of the repo and rather inlcude it in my gitignore and use a secrets manager for sensitive credentials.
