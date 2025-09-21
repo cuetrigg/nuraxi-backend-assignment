@@ -9,7 +9,7 @@ from app.models import Base, Event, DailyAggregate, ModelRegistry #noqa
 
 logger = logging.getLogger(__name__)
 
-DATABASE_URL = os.getenv("DATABASE_URL", f"postgresql+asyncpg://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@db:5432/{os.getenv('POSTGRES_DB')}")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+asyncpg://nuraxi_user:nuraxi_pw@localhost:5432/nuraxi_db")
 engine = create_async_engine(
     DATABASE_URL,
     future=True,

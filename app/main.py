@@ -25,7 +25,7 @@ from streaming_service import StreamingService
 
 logger = logging.getLogger(__name__)
 
-MODELS_DIR = os.getenv("MODELS_DIR", "/models")
+MODELS_DIR = os.getenv("MODELS_DIR", "./models")
 ml_service = AggregateLLMService(models_dir=MODELS_DIR)
 
 streaming_service = StreamingService(event_bus)
